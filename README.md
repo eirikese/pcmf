@@ -1,6 +1,9 @@
 # PCMF Master's Thesis
 Point Cloud Map Fitting
 
+![pcmf_rviz_result](https://github.com/eirikese/pcmf_master_thesis/assets/118887178/ee797a9c-0a32-4d3c-bcb8-a9f0bfe806ae)
+
+
 Master's Thesis
 
 NTNU, Maritime Robotics 2024
@@ -12,6 +15,10 @@ This repository contains all the code, documentation, and resources for my maste
 
 The code for Point Cloud Object Detection is developed using ROS Noetic and C++, on Ubuntu 20.04. The PCL library is used for point cloud processing. The lidars used for testing are Ouster OS1-64/32, with data transfer via ROS pointcloud2 messages.
 Relative Positioning using Fiducial Markers utilizes OpenCV and Fiducial markers for detection and relative positioning.
+
+# Pipeline
+![pcmf_pipeline](https://github.com/eirikese/pcmf_master_thesis/assets/118887178/be715125-f7db-4287-8f01-e7f916db7c53)
+
 
 # Requirements
 * fast_gcip
