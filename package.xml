@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pcmf</name>
+  <version>0.0.0</version>
+  <description>The pcmf package</description>
+
+  <maintainer email="mr_fusion@todo.todo">mr_fusion</maintainer>
+  <license>TODO</license> <!-- Update with an appropriate license -->
+
+  <!-- Url tags are optional -->
+  <!-- <url type="website">http://wiki.ros.org/pcmf</url> -->
+
+  <!-- Author tags are optional -->
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>visualization_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
