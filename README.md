@@ -3,8 +3,11 @@
 ![pcmf_rviz_result](https://github.com/eirikese/pcmf_master_thesis/assets/118887178/ee797a9c-0a32-4d3c-bcb8-a9f0bfe806ae)
 
 Point Cloud Map Fitting
+
 Master's Thesis
+
 NTNU, Maritime Robotics 2024
+
 Developed for ROS noetic on Ubuntu 20.04
 
 ## Description
