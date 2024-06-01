@@ -17,7 +17,8 @@ The code for Point Cloud Object Detection is developed using ROS Noetic and C++,
 Relative Positioning using Fiducial Markers utilizes OpenCV and Fiducial markers for detection and relative positioning.
 
 # Pipeline
-![pcmf_pipeline](https://github.com/eirikese/pcmf_master_thesis/assets/118887178/be715125-f7db-4287-8f01-e7f916db7c53)
+![pcmf_pipeline_transp](https://github.com/eirikese/pcmf_master_thesis/assets/118887178/281e9481-2758-4524-8e52-f2cfa873e5dc)
+
 
 
 # Requirements
