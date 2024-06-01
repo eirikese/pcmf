@@ -1,7 +1,7 @@
-# pcmf
+# PCMF Master's Thesis
 Point Cloud Map Fitting
 
-Master Thesis
+Master's Thesis
 
 NTNU, Maritime Robotics 2024
 
