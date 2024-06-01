@@ -1,0 +1,54 @@
+<launch>
+    <!-- pcmf support nodes -->
+    <!-- <node name="npy_map_publisher" pkg="pcmf" type="npy_map_publisher.py" output="screen" /> -->
+    <node name="predef_map_publisher_brattora" pkg="pcmf" type="predef_map_publisher_brattora.py" output="screen" />
+    <!-- <node name="corner_heatmap_node" pkg="pcmf" type="corner_heatmap_node.py" output="screen" /> -->
+    <!-- <node name="ekf_transformation_plotter" pkg="pcmf" type="ekf_transformation_plotter.py" output="screen" respawn="true" /> -->
+    <node name="gps_to_local_frame" pkg="pcmf" type="gps_to_local_frame.py" output="screen" />
+    <!-- <node name="gps_slam_error_plotter" pkg="pcmf" type="gps_slam_error_plotter.py" output="screen" respawn="true" /> -->
+
+    <!-- pcmf_map_processing_node with parameters -->
+    <node name="pcmf_map_processing_node" pkg="pcmf" type="pcmf_map_processing_node" output="screen">
+        <param name="z_min" value="-5.0" />
+        <param name="z_max" value="0.1" />
+        <param name="use_path_leveling" value="true" />                <!-- Use path leveling or lowest z in slam leveling -->
+    </node>
+
+    <!-- pcmf_anchor_pivot_node with parameters -->
+    <node name="pcmf_anchor_pivot_node" pkg="pcmf" type="pcmf_anchor_pivot_node" output="screen">
+        
+        <!-- Anchor pivot parameters -->
+        <param name="anchor_fit_threshold" value="0.7"/>                <!-- 0.7  Anchor % of corners required for anchor fit -->
+        <param name="anchor_corner_proximity_threshold" value="12.0"/>  <!-- 15.0 Anchor dist between corners to consider match -->
+        <param name="checkAllAnchors" value="false"/>                   <!-- false Check all anchors for fit -->
+        <param name="enable_pose_EKF" value="false"/>                    <!-- true Enable pose EKF -->
+
+        <!-- RANSAC corner detection parameters -->
+        <param name="useRANSAConCornerDetection" value="true"/>         <!--      RANSAC use on corners -->
+        <param name="distanceThreshold" value="3"/>                     <!-- 3    RANSAC inlier threshold-->
+        <param name="radiusLimitLow" value="10"/>                       <!-- 15   RANSAC min line length -->
+        <param name="radiusLimitHigh" value="300"/>                     <!-- 500  RANSAC max line length -->
+        <param name="angleThresholdDegrees" value="10"/>                <!-- 10   RANSAC line angle merge threshold -->
+        <param name="EndpointMergeThreshold" value="10"/>               <!-- 10   RANSAC endpoint merge threshold -->
+        <param name="voxelSize" value="3"/>                             <!-- 3    RANSAC Voxel grid filter size in x and y-->
+        <param name="lineDistanceThreshold" value="3"/>                 <!-- 3    RANSAC line distance threshold for merging -->
+        <param name="minClusterSize" value="20"/>                       <!-- 20   RANSAC cluster min size -->
+        <param name="maxClusterSize" value="10000"/>                    <!-- 10000 RANSAC cluster max size -->
+        <param name="minPointsPerLine" value="10"/>                     <!-- 20   RANSAC min points per line -->
+
+        <!-- GICP parameters -->
+        <param name="gicp_corresp_dist" value="15.0"/>                   <!-- 10.0 GICP correspondence distance -->
+
+        <!-- Heatmap grid parameters -->
+        <param name="grid_width" value="100"/>                          <!-- 100  heatmap grid cell count width -->
+        <param name="grid_height" value="100"/>                         <!-- 100  heatmap grid cell count height -->
+        <param name="grid_cell_size" value="5.0"/>                      <!-- 5.0  heatmap grid cell size in meters -->
+        <param name="heatmap_decay_rate" value="0.99"/>                 <!-- 0.95 heatmap decay rate -->
+
+        <!-- Cluster filtering parameters -->
+        <param name="clusterInclusionTolerance" value="15"/>            <!-- 10 , 8  Used in extract largest cluster function, threshold distance for clustering -->
+    </node>
+
+    <!-- hdl_graph_slam rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hdl_graph_slam)/rviz/hdl_graph_slam.rviz" output="screen" />
+</launch>
