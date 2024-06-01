@@ -23,8 +23,8 @@ Relative Positioning using Fiducial Markers utilizes OpenCV and Fiducial markers
 All the configurable parameters are listed in *, launch/pcmf, launch/pcmf_bridge*, and *launch/hdl_graph_slam_400_pcmf*
 
 # Launch
-'''
+~~~
 roslaunch pcmf hdl_graph_slam_400_pcmf.launch
 roslaunch pcmf pcmf.launch
-rosbag play  . . . 
-'''
+rosbag play  ... 
+~~~
